@@ -1,0 +1,57 @@
+:root{
+
+    --modal-duration: 1s;
+}
+
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1; /* will cause it to be on top*/
+    
+    /* enables it to start at the top left corner and takes up the entire height of the page */
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.5); /*somewhat see through*/
+}
+
+/*the three icons*/
+.modal-content{
+    background: #fff;
+    text-align: center;
+    margin: 10% auto; /*so it appears in the center*/
+    width: 350px;
+    border-radius: 10px; /*rounded corners*/
+    padding: 3rem;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0, 0.17);
+
+    /* Animation */
+    animation-name: modalopen; /*assigning it a name */
+    animation-duration: var(--modal-duration); /*length of time the animation take to complete 1 cycle*/
+}
+
+/* targeting the icon's heading */
+.modal-content h1 {
+    margin-bottom: 1rem; /*margin below the heading*/
+}
+
+/* targeting the p tag below the icon */
+.modal-content p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* adjusting how the icon fades away */
+@keyframes modalopen{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+
+}
